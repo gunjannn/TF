@@ -27,9 +27,13 @@ node{
         
      } */
    
-     
+     stage('deploy tf image') {
+     docker {
+      image 'hashicorp/terraform:light'
+      args '--entrypoint='
+    }
  
-      
+    }  
      stage('Provision infrastructure') {
        
       sh 'terraform init'
