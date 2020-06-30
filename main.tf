@@ -3,11 +3,11 @@ resource "azurerm_resource_group" "example" {
   location = "Canada Central"
 }
 
-resource "azurerm_kubernetes_cluster" "example" {
+resource "azurerm_kubernetes_cluster" "k8s-bg" {
   name                = "k8s-bg"
   location            = "Canada Central"
   resource_group_name = "vm-rg"
-  dns_prefix          = "exampleaks1"
+  dns_prefix          = "k8sbg1"
   
   default_node_pool {
     name       = "default"
@@ -33,6 +33,6 @@ service_principal {
 }*/
 
 output "kube_config" {
-  value = "azurerm_kubernetes_cluster.example.kube_config_raw"
+  value = azurerm_kubernetes_cluster.kube_config_raw
 }
 }
