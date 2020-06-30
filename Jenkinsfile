@@ -38,11 +38,11 @@ agent any
      stage('Provision infrastructure'){
           steps{
        tool name: 'Terraform', type: 'terraform'
-      sh 'terraform -version' 
-      sh 'terraform init'
-      sh 'terraform plan -out=plan'
+      sh "terraform -version" 
+      sh "terraform init /usr/bin/terraform"
+      sh "terraform plan -out=plan"
  // sh ‘terraform destroy -auto-approve’
-      sh 'terraform apply plan'
+      sh "terraform apply plan"
  }  
  }
 
