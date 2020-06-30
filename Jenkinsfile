@@ -31,7 +31,7 @@ node{
  
       
      stage('Provision infrastructure') {
-      sh 'terraform -version' 
+       
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
