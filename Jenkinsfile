@@ -34,8 +34,6 @@ node{
  
       
      stage('Provision infrastructure'){
-      steps{
-           dir('dev'){
       sh 'LAUNCH_DIAGNOSTICS=true'
       sh 'terraform -version' 
       sh 'terraform init'
@@ -44,8 +42,7 @@ node{
       sh 'terraform apply plan'
       
  }
- }
- }    
+
 def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
 def resourceGroup = 'vm-rg'
 def aks = 'k8s-bg'
