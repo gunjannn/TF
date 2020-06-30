@@ -32,7 +32,7 @@ node{
       
      stage('Provision infrastructure') {
        def tfHome = tool name: 'localterraform'
-       env.PATH = "${tfHome}:${env.PATH}" 
+       def terraformCMD = "${Home}/terraform"
       sh 'terraform -version'
       sh 'terraform init'
       sh 'terraform plan -out=plan'
