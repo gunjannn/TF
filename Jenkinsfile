@@ -26,8 +26,14 @@ node{
         sh 'docker push dockergunn/bg:v1'
         
      } */
-
-    stage('Provision infrastructure') {
+   
+     
+ 
+      
+     stage('Provision infrastructure') {
+       def tfHome = tool name: 'localterraform'
+       env.PATH = "${tfHome}:${env.PATH}" 
+      sh 'terraform — version'
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
