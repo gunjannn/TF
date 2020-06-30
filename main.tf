@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_kubernetes_cluster" "example" {
   name                = "k8s-bg"
-  location            = canadacentral
+  location            = Canada Central
   resource_group_name = vm-rg
   dns_prefix          = "exampleaks1"
 
