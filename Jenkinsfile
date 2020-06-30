@@ -1,4 +1,4 @@
-node{
+pipeline{
      
     stage('SCM Checkout'){
         git url:  'https://github.com/gunjannn/TF.git',branch: 'master'
