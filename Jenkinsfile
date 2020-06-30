@@ -30,12 +30,11 @@ node{
  stage('Set Terraform path') {
    def tfHome = tool name: 'Terraform'
    env.PATH = '${tfHome}:${env.PATH}'
-   sh 'terraform — version'
- }
+   }
  
       
      stage('Provision infrastructure'){
-     
+      sh 'terraform --version' 
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
