@@ -33,6 +33,6 @@ service_principal {
 }*/
 
 output "kube_config" {
-  value = azurerm_kubernetes_cluster.kube_config_raw
+  value = azurerm_kubernetes_cluster.k8sbg.kube_config_raw
 }
 }
