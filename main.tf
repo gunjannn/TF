@@ -32,7 +32,6 @@ service_principal {
   value = azurerm_kubernetes_cluster.example.kube_config.0.client_certificate
 }*/
 
-output "kube_config" {
+/*output "kube_config" {
   value = azurerm_kubernetes_cluster.k8sbg.kube_config_raw
-}
-}
+  }*/
