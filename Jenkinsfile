@@ -27,19 +27,21 @@ node{
         
      } */
    
- stage('Set Terraform path') {
+/*stage('Set Terraform path') {
    def tfHome = tool name: 'Terraform'
    env.PATH = '${tfHome}:${env.PATH}'
-   }
+   }*/
  
       
      stage('Provision infrastructure'){
+          steps{
+       tool name: 'Terraform', type: 'terraform'
       sh 'terraform -version' 
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
       sh 'terraform apply plan'
-      
+ }  
  }
 
 def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
