@@ -36,3 +36,4 @@ service_principal {
   value = azurerm_kubernetes_cluster.k8sbg.kube_config_raw
   }*/
   }
+  }
