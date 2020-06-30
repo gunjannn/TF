@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "example" {
   name     = "vm-rg"
-  location = "canadacentral"
+  location = "Canada Central"
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
@@ -28,9 +28,9 @@ service_principal {
     client_secret = "${var.client_secret}"
   }
 
-output "client_certificate" {
+/*output "client_certificate" {
   value = azurerm_kubernetes_cluster.example.kube_config.0.client_certificate
-}
+}*/
 
 output "kube_config" {
   value = azurerm_kubernetes_cluster.example.kube_config_raw
