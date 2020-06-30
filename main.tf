@@ -24,8 +24,8 @@ resource "azurerm_kubernetes_cluster" "example" {
   }
   
 service_principal {
-    client_id     = "${var.client_id}"
-    client_secret = "${var.client_secret}"
+  client_id     = "${var.client_id}"
+  client_secret = "${var.client_secret}"
   }
 
 /*output "client_certificate" {
@@ -33,6 +33,6 @@ service_principal {
 }*/
 
 output "kube_config" {
-value = azurerm_kubernetes_cluster.example.kube_config_raw
+  value = "azurerm_kubernetes_cluster.example.kube_config_raw"
 }
 }
