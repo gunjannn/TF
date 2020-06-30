@@ -31,8 +31,7 @@ node{
  
       
      stage('Provision infrastructure') {
-        def tfHome = tool name: 'localterraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-    env.PATH = "${tfHome}:${env.PATH}"
+      sh 'terraform -version' 
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
