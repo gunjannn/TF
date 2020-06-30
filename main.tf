@@ -1,9 +1,8 @@
 resource "azurerm_resource_group" "example" {
   name     = "vm-rg"
   location = "Canada Central"
-
-{
-  resource "azurerm_kubernetes_cluster" "k8s-bg" {
+  }
+resource "azurerm_kubernetes_cluster" "k8s-bg" {
   name                = "k8s-bg"
   location            = "Canada Central"
   resource_group_name = "vm-rg"
