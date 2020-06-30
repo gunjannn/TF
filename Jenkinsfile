@@ -35,12 +35,13 @@ node{
       
      stage('Provision infrastructure'){
       script{
+      sh 'LAUNCH_DIAGNOSTICS=true'
       sh 'terraform -version' 
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
       sh 'terraform apply plan'
-      launch diagnostic=true
+      
  }
  }
      
