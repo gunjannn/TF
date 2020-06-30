@@ -27,15 +27,11 @@ node{
         
      } */
 
-      stage(‘Provision infrastructure’) {
- 
- steps {
- dir(‘master’)
- {
- sh ‘terraform init’
- sh ‘terraform plan -out=plan’
+    stage('Provision infrastructure') {
+      sh 'terraform init'
+      sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
- sh ‘terraform apply plan’
+      sh 'terraform apply plan'
  }
  
      
