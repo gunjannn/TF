@@ -39,8 +39,8 @@ agent any
           steps{
        tool name: 'Terraform', type: 'terraform'
       sh "terraform -version" 
-      sh "terraform init /root/TF
-"
+      sh "terraform init /root/TF"
+
       sh "terraform plan -out=plan"
  // sh ‘terraform destroy -auto-approve’
       sh "terraform apply plan"
