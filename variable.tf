@@ -2,7 +2,7 @@
 # Default region is set to us-east-1
 
 variable "tenant_id" {
-  tenant_id = 2b6d0a61-dfad-4b8b-8763-0cb831697a57
+  tenant_id = "2b6d0a61-dfad-4b8b-8763-0cb831697a57"
   }
 
 variable "subscription_id" {
