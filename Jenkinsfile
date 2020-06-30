@@ -27,11 +27,21 @@ node{
         
      } */
    
+       stage(‘Set Terraform path’) {
+ steps {
+ script {
+ def tfHome = tool name: ‘Terraform’
+ env.PATH = “${tfHome}:${env.PATH}”
+ }
+ sh ‘terraform — version’
  
+ 
+ }
+ }
  
       
      stage('Provision infrastructure'){
-      def tfHOME = tool name: 'localterraform', type: 'terraform'
+     
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
