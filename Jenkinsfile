@@ -26,6 +26,18 @@ node{
         sh 'docker push dockergunn/bg:v1'
         
      } */
+
+      stage(‘Provision infrastructure’) {
+ 
+ steps {
+ dir(‘master’)
+ {
+ sh ‘terraform init’
+ sh ‘terraform plan -out=plan’
+ // sh ‘terraform destroy -auto-approve’
+ sh ‘terraform apply plan’
+ }
+ 
      
 def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
 def resourceGroup = 'vm-rg'
