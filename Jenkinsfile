@@ -30,7 +30,7 @@ node{
  
  
       
-     stage('Provision infrastructure') {
+     stage('Provision infrastructure'){
       def tfHOME = tool name: 'localterraform', type: 'terraform'
       sh 'terraform init'
       sh 'terraform plan -out=plan'
