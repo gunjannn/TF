@@ -31,7 +31,6 @@ node{
  
       
      stage('Provision infrastructure') {
-      def tfHome = tool name: 'localterraform', type: 'terraform'       
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
