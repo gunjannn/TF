@@ -1,10 +1,37 @@
-provider "aws" {
-  access_key = "AKIA46G6QQAP232DOD26"
-  secret_key = "PTw2VVzO5osUJr3HNiO263VPxX+eDW5vsAqQdOMq"
-  region     = "us-east-1"
+resource "azurerm_resource_group" "example" {
+  name     = "vm-rg"
+  location = "canadacentral"
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-09d95fab7fff3776c"
-  instance_type = "t2.micro"
+resource "azurerm_kubernetes_cluster" "example" {
+  name                = "k8s-bg"
+  location            = canadacentral
+  resource_group_name = vm-rg
+  dns_prefix          = "exampleaks1"
+
+  default_node_pool {
+    name       = "default"
+    node_count = 1
+    vm_size    = "Standard_D2_v2"
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+
+  tags = {
+    Environment = "test"
+  }
+  
+service_principal {
+    client_id     = "${var.client_id}"
+    client_secret = "${var.client_secret}"
+  }
+
+output "client_certificate" {
+  value = azurerm_kubernetes_cluster.example.kube_config.0.client_certificate
+}
+
+output "kube_config" {
+  value = azurerm_kubernetes_cluster.example.kube_config_raw
 }
