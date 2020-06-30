@@ -5,13 +5,13 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_kubernetes_cluster" "example" {
   name                = "k8s-bg"
-  location            = Canada Central
-  resource_group_name = vm-rg
+  location            = "Canada Central"
+  resource_group_name = "vm-rg"
   dns_prefix          = "exampleaks1"
 
   default_node_pool {
     name       = "default"
-    node_count = 1
+    node_count = "1"
     vm_size    = "Standard_D2_v2"
   }
 
