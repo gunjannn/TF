@@ -33,7 +33,7 @@ node{
      stage('Provision infrastructure') {
        def tfHome = tool name: 'localterraform'
        def tfCMD = "/root/terraform"
-      sh 'terraform -version'
+      sh 'terraform --version'
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
