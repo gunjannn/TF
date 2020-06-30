@@ -34,7 +34,6 @@ node{
  
       
      stage('Provision infrastructure'){
-      sh 'LAUNCH_DIAGNOSTICS=true'
       sh 'terraform -version' 
       sh 'terraform init'
       sh 'terraform plan -out=plan'
