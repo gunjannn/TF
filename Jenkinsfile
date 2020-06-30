@@ -1,4 +1,5 @@
 pipeline{
+agent any
      stages{
     stage('SCM Checkout'){
          steps{
@@ -45,9 +46,9 @@ pipeline{
  }  
  }
 
-def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
+/*def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
 def resourceGroup = 'vm-rg'
-def aks = 'k8s-bg'
+def aks = 'k8s-bg'*/
      stage("Deploy To AKS"){
           steps{
 acsDeploy azureCredentialsId: 'k8s-bg', 
