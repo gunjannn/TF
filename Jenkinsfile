@@ -30,13 +30,13 @@ node{
  
  
       
-     /*stage('Provision infrastructure') {
-       
+     stage('Provision infrastructure') {
+      def tfHome = tool name: 'localterraform', type: 'terraform'       
       sh 'terraform init'
       sh 'terraform plan -out=plan'
  // sh ‘terraform destroy -auto-approve’
       sh 'terraform apply plan'
- }*/
+ }
  
      
 def servicePrincipalId = '3461446c-1154-4720-95f3-6c1309af3507'
