@@ -1,5 +1,5 @@
 pipeline{
-     
+     stages{
     stage('SCM Checkout'){
          steps{
         git url:  'https://github.com/gunjannn/TF.git',branch: 'master'
@@ -57,6 +57,7 @@ containerService: 'k8s-bg | AKS',
 dcosDockerCredentialsPath: '', 
 resourceGroupName: 'vm-rg', 
 secretName: '', sshCredentialsId: ''
+}
 }
 }
 }
