@@ -29,6 +29,8 @@ resource "azurerm_kubernetes_cluster" "k8s-bg" {
 service_principal {
   client_id     = "${var.client_id}"
   client_secret = "${var.client_secret}"
+  tenant_id = "${var.tenant_id}"
+  
   }
 
 /*output "client_certificate" {
