@@ -1,5 +1,5 @@
 provider "azurerm" {
-  version = "=1.5.0"
+  version = "=2.0.0"
 }
 
 export ARM_SUBSCRIPTION_ID = "64b70538-bc40-4492-9c4b-13f8b43e732d"
