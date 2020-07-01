@@ -7,15 +7,14 @@ variable "tenant_id" {
 
 variable "subscription_id" {
   description = "64b70538-bc40-4492-9c4b-13f8b43e732d"
-  
   }
 
 variable "client_id" {
   description = "3461446c-1154-4720-95f3-6c1309af3507"
-}
+  }
 
 variable "client_secret" {
   description = "gi5vP2T-G6_UWN-U7rTHG4wCGPwj82vn.d"
-}
+  }
 
 
