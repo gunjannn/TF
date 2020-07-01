@@ -10,11 +10,11 @@ variable "subscription_id" {
   }
 
 variable "client_id" {
-  description = "37b2505f-6316-4a24-9585-ca43dabcb7ac"
+  description = "c6fd5c6c-5483-4628-95c0-3c1bea294f7a"
   }
 
 variable "client_secret" {
-  description = "f0GHmAXoTyB6D_Tm8-ThtSATi_g1a6lH_t"
+  description = "jENlDLFG-8-.5jH1~-Ar9l~752PyQYr-7K"
   }
 
 
